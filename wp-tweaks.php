@@ -3,7 +3,7 @@
 Plugin Name: WordPress Tweaks
 Description: Some fixes, features and alternative defaults for WordPress.
 Author: Ihor Vorotnov
-Version: 0.2.0
+Version: 0.3.0
 Author URI: http://ihorvorotnov.com
 */
 
@@ -39,3 +39,14 @@ function wpt_remove_dashboard_widgets() {
 
 }
 add_action( 'wp_dashboard_setup', 'wpt_remove_dashboard_widgets' );
+
+/**
+ * Add custom content to wp-admin footer
+ * @since 0.3.0
+ */
+function wpt_custom_admin_footer( $text ) {
+
+	return '<span id="footer-thankyou">Developed by <a href="http://ihorvorotnov.com/" target="_blank">Ihor Vorotnov</a>, powered by <a href="http://www.wordpress.org/" target="_blank">WordPress</a>.</span>';
+
+}
+add_filter( 'admin_footer_text', 'wpt_custom_admin_footer' );
