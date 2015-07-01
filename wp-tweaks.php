@@ -41,7 +41,7 @@ function wpt_remove_dashboard_widgets() {
 add_action( 'wp_dashboard_setup', 'wpt_remove_dashboard_widgets' );
 
 /**
- * Add custom content to wp-admin footer
+ * Add custom content to wp-admin footer.
  * @since 0.3.0
  */
 function wpt_custom_admin_footer( $text ) {
