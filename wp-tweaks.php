@@ -3,7 +3,7 @@
 Plugin Name: WordPress Tweaks
 Description: Some fixes, features and alternative defaults for WordPress.
 Author: Ihor Vorotnov
-Version: 0.1.0
+Version: 0.2.0
 Author URI: http://ihorvorotnov.com
 */
 
@@ -20,3 +20,22 @@ function wpt_remove_google_fonts() {
 }
 add_action( 'wp_enqueue_scripts', 'wpt_remove_google_fonts' );
 add_action( 'admin_enqueue_scripts', 'wpt_remove_google_fonts' );
+
+/**
+ * Remove some dashboard widgets, because we never use them.
+ * @since 0.2.0
+ */
+function wpt_remove_dashboard_widgets() {
+
+	//remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+	//remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+	//remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+	//remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+	//remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+	//remove_meta_box( 'dashboard_activity', 'dashboard', 'normal')
+
+}
+add_action( 'wp_dashboard_setup', 'wpt_remove_dashboard_widgets' );
