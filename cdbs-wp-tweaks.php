@@ -3,7 +3,7 @@
 Plugin Name: WordPress Tweaks
 Description: Some fixes, features and alternative defaults for WordPress.
 Author: Ihor Vorotnov
-Version: 0.3.0
+Version: 0.4.0
 Author URI: http://ihorvorotnov.com
 */
 
@@ -50,3 +50,22 @@ function wpt_custom_admin_footer( $text ) {
 
 }
 add_filter( 'admin_footer_text', 'wpt_custom_admin_footer' );
+
+/**
+ * Disable Emoji support, added in WP 4.2
+ * @since 0.4.0
+ */
+function wpt_disable_emoji() {
+
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
+}
+add_action( 'init', 'wpt_disable_emoji' );
