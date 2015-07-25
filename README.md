@@ -23,6 +23,10 @@ A must-use plugin with some tweaks to WordPress.
 
 ## Changelog
 
+**0.4.0**
+
+Disable Emoji support introduced in WP 4.2
+
 **0.3.0**
 
 Add custom content to wp-admin footer

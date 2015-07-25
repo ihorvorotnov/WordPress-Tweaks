@@ -1,10 +1,11 @@
 <?php
 /*
-Plugin Name: WordPress Tweaks
+Plugin Name: CDBS WordPress Tweaks
 Description: Some fixes, features and alternative defaults for WordPress.
-Author: Ihor Vorotnov
 Version: 0.4.0
-Author URI: http://ihorvorotnov.com
+Plugin URI: http://www.ihorvorotnov.com/projects/cdbs/
+Author: Ihor Vorotnov
+Author URI: http://www.ihorvorotnov.com/
 */
 
 /**
@@ -52,7 +53,7 @@ function wpt_custom_admin_footer( $text ) {
 add_filter( 'admin_footer_text', 'wpt_custom_admin_footer' );
 
 /**
- * Disable Emoji support, added in WP 4.2
+ * Disable Emoji support introduced in WP 4.2
  * @since 0.4.0
  */
 function wpt_disable_emoji() {
