@@ -10,8 +10,16 @@ A must-use plugin with some tweaks to WordPress.
 
 ## Roadmap
 
-- Log in using email or username
+- Log in using email or username (or only email)
+- Change default login label
 - Change default login error message
+- Remove query strings from css and js
+- Unload jQuery Migrate
+- Modify 'From' for default WP emails
+- Disable Emoji
+- Cyrillic dates
+- Cyrillic slugs
+- Protect login and wp-admin
 
 ## Changelog
 
